@@ -21,6 +21,9 @@ jobs:
       - name: 절대 홈 경로 검사
         shell: bash
         run: |
+          # GitHub Actions는 bash에 -e를 붙인다. rg는 "매치 없음"에 1을 반환하므로
+          # -e 아래서는 정상 통과가 곧 실패가 된다. 명시적으로 끄고 직접 판정한다.
+          set +e
           set -uo pipefail
           ALLOW=".home-path-allow"
           PATTERN='(?<![\w.])(/home/|/Users/)[^/[:space:]"'"'"'`:,;)\]}=*?|<>]+/'
