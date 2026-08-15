@@ -43,7 +43,7 @@ FORBIDDEN = [
     "공개/비공개",
     "Discord source",
     "discord.com/channels",
-    "/home/elite",
+    "/home/campbell",
     "vault",
     "Vault",
     "셀레네",
